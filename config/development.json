@@ -1,9 +1,8 @@
 {
-    "smtp":{"user":"daybet.test@gmail.com","pass":"Whatev3r!"},
-    "secretKey":"jtb@r?vLEwbfn&3j",
-    "AESKey":"E8A1F15D15E76AA67C571BD49783614F",
-    "domainUrl":"https://digitalsr.herokuapp.com/",
+    "smtp":{"user":"","pass":""},
+    "secretKey":"",
+    "domainUrl":"",
     "userPriority":{ "superadmin": 100,"admin": 90, "manager": 80, "user": 70 },
-    "inventoryAdmin":"daybetlee@gmail.com",
-    "db":"mongodb+srv://admin:SPriOnEwe2OxbLuV@cluster0.lkyks.mongodb.net/database?retryWrites=true&w=majority"
+    "inventoryAdmin":"",
+    "db":""
   }

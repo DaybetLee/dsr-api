@@ -31,7 +31,7 @@ describe("/api/user", () => {
           name: "name name",
           businessUnit: businessUnitId,
           staffNumber: "a11",
-          email: "daybetlee@gmail.com",
+          email: "kaizen.jakoby@fineoak.org",
           password: "P@55w0rd123",
           role: "manager",
           manager: managerId,
@@ -42,7 +42,7 @@ describe("/api/user", () => {
           name: "name name2",
           businessUnit: businessUnitId,
           staffNumber: "a22",
-          email: "daybetlee2@gmail.com",
+          email: "nidish.osher@fineoak.org",
           password: "P@55w0rd123",
           role: "admin",
           manager: managerId,
@@ -105,7 +105,7 @@ describe("/api/user", () => {
         name: "name name",
         businessUnit: businessUnitId,
         staffNumber: "a11",
-        email: "daybetlee@gmail.com",
+        email: "kaizen.jakoby@fineoak.org",
         password: "P@55w0rd123",
         role: "manager",
         manager: managerId,
@@ -158,7 +158,7 @@ describe("/api/user", () => {
           name: "name name",
           businessUnit: businessUnitId,
           staffNumber: "a11",
-          email: "daybetlee@gmail.com",
+          email: "kaizen.jakoby@fineoak.org",
           password: "P@55w0rd123",
           role: "manager",
           manager: managerId,
@@ -169,7 +169,7 @@ describe("/api/user", () => {
           name: "name name2",
           businessUnit: businessUnitId,
           staffNumber: "a22",
-          email: "daybetlee2@gmail.com",
+          email: "nidish.osher@fineoak.org",
           password: "P@55w0rd123",
           role: "admin",
           manager: managerId,
@@ -201,7 +201,7 @@ describe("/api/user", () => {
         name: "name name",
         businessUnit: businessUnitId,
         staffNumber: "a11",
-        email: "daybetlee@gmail.com",
+        email: "kaizen.jakoby@fineoak.org",
         password: "P@55w0rd123",
         role: "manager",
         manager: managerId,
@@ -259,7 +259,7 @@ describe("/api/user", () => {
         name = "name name1";
         businessUnit = businessUnitId;
         staffNumber = "a11";
-        email = "daybetlee@gmail.com";
+        email = "kaizen.jakoby@fineoak.org";
         password = "P@55w0rd123";
         rep_pass = "P@55w0rd123";
         role = "user";
@@ -418,7 +418,7 @@ describe("/api/user", () => {
         name: "name name2",
         businessUnit: businessUnitId,
         staffNumber: "a22",
-        email: "daybet.test@gmail.com",
+        email: "ilyas.deric@fineoak.org",
         password: "P@55w0rd123",
         rep_pass: "P@55w0rd123",
         role: "manager",
@@ -481,7 +481,7 @@ describe("/api/user", () => {
   //         name: "name name2",
   //         businessUnit: businessUnitId,
   //         staffNumber: "a22",
-  //         email: "daybetlee@gmail.com",
+  //         email: "kaizen.jakoby@fineoak.org",
   //         password: "P@55w0rd123",
   //         rep_pass: "P@55w0rd123",
   //         role: "manager",
@@ -493,7 +493,7 @@ describe("/api/user", () => {
   //       newName = "updatedName";
   //       newBusinessUnit = mongoose.Types.ObjectId();
   //       newStaffNumber = "a1";
-  //       newEmail = "daybet.test@gmail.com";
+  //       newEmail = "ilyas.deric@fineoak.org";
   //       newPassword = "P@55w0rd132";
   //       newRep_pass = "P@55w0rd132";
   //       newRole = "admin";
@@ -720,7 +720,7 @@ describe("/api/user", () => {
         name: "name name2",
         businessUnit: businessUnitId,
         staffNumber: "a22",
-        email: "daybetlee@gmail.com",
+        email: "kaizen.jakoby@fineoak.org",
         password: "P@55w0rd123",
         rep_pass: "P@55w0rd123",
         role: "manager",
