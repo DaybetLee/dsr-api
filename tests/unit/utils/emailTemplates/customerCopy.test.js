@@ -9,7 +9,6 @@ describe("customer email template", () => {
       companyName: "iwaðe atengi",
       address: "dyydn road",
       contactPersonEmail: "lbedrepaa@iwaðe.com",
-      productVendor: "ðimh",
       site: "atiðho",
       contactPerson: "eem",
       telephone: "11111111",
@@ -66,7 +65,9 @@ describe("customer email template", () => {
       signedBy: "signedBy",
     };
 
-    let result = customerEmail(payload);
+    const productVendor = { name: "ðimh" };
+
+    let result = customerEmail(payload, productVendor);
     Object.values(payload).forEach((value) => {
       if (typeof value === "object") {
         Object.values(value).forEach((partNumber) =>
@@ -81,13 +82,13 @@ describe("customer email template", () => {
     payload["completedDateTime"] = new Date("2021-01-02T00:00:00.000+08:00");
     payload["chargeable"] = true;
 
-    result = customerEmail(payload);
+    result = customerEmail(payload, productVendor);
     expect(result).toContain(moment(payload.serviceDateTime).format("LLL"));
     expect(result).toContain(moment(payload.completedDateTime).format("LLL"));
     expect(result).toContain("yes");
 
     payload["chargeable"] = false;
-    result = customerEmail(payload);
+    result = customerEmail(payload, productVendor);
     expect(result).toContain("no");
   });
 });

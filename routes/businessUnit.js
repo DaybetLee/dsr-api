@@ -4,6 +4,7 @@ const router = express.Router();
 const { BusinessUnit, validate } = require("../models/businessUnit");
 const validateID = require("../middlewares/validateID");
 const authentication = require("../middlewares/authentication");
+const { User } = require("../models/user");
 
 router.get("/:id", [authentication, validateID], async (req, res) => {
   const businessUnit = await BusinessUnit.findById(req.params.id);
@@ -52,7 +53,15 @@ router.put("/:id", [authentication, validateID], async (req, res) => {
 });
 
 router.delete("/:id", [authentication, validateID], async (req, res) => {
+  const user = await User.findOne({
+    businessUnit: req.params.id,
+  });
+
+  console.log(req.params.id);
+  if (user) return res.status(403).send("Business Unit is in use");
+
   const businessUnit = await BusinessUnit.findByIdAndDelete(req.params.id);
+
   return businessUnit
     ? res.send("success")
     : res.status(404).send("Business Unit Not Found");

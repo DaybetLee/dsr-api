@@ -191,10 +191,11 @@ describe("/api/businessunit", () => {
     });
   });
 
-  ////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   describe("DELETE /:id", () => {
     let businessUnit;
     let id;
+    let userId;
 
     const exec = async () => {
       return await request(server)
@@ -202,6 +203,10 @@ describe("/api/businessunit", () => {
         .set("x-auth-token", token)
         .send();
     };
+
+    afterEach(async () => {
+      await User.deleteMany({});
+    });
 
     beforeEach(async () => {
       businessUnit = new BusinessUnit({
@@ -211,6 +216,20 @@ describe("/api/businessunit", () => {
       await businessUnit.save();
 
       id = businessUnit._id;
+
+      user = new User({
+        name: "name name2",
+        businessUnit: id,
+        staffNumber: "a22",
+        email: "daybetlee@gmail.com",
+        password: "P@55w0rd123",
+        rep_pass: "P@55w0rd123",
+        role: "manager",
+        userSignature: "userSignature2",
+      });
+      await user.save();
+
+      userId = user._id;
     });
 
     it("should return 404 if no businessUnit with the given id was found", async () => {
@@ -221,7 +240,14 @@ describe("/api/businessunit", () => {
       expect(res.status).toBe(404);
     });
 
-    it("should delete the businessUnit if input is valid", async () => {
+    it("should return 403 if businessUnit used by user object", async () => {
+      const res = await exec();
+
+      expect(res.status).toBe(403);
+    });
+
+    it("should delete the businessUnit if Id is valid and no user object is use it", async () => {
+      await User.deleteMany({});
       const res = await exec();
 
       const businessUnitInDb = await BusinessUnit.findById(id);

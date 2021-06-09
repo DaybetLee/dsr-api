@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { ProductVendor, validate } = require("../models/productVendor");
+const { ServiceReport } = require("../models/serviceReport");
 const authentication = require("../middlewares/authentication");
 const validateID = require("../middlewares/validateID");
 
@@ -52,6 +53,11 @@ router.put("/:id", [authentication, validateID], async (req, res) => {
 });
 
 router.delete("/:id", [authentication, validateID], async (req, res) => {
+  const serviceReport = await ServiceReport.findOne({
+    productVendor: req.params.id,
+  });
+  if (serviceReport) return res.status(403).send("Business Unit is in use");
+
   const productVendor = await ProductVendor.findByIdAndDelete(req.params.id);
   return productVendor
     ? res.send("success")
