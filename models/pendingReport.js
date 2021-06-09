@@ -47,7 +47,7 @@ const validate = (body) => {
       .max(8)
       .min(8)
       .label("Telephone"),
-    productVendorId: Joi.objectId().label("Product Vendor"),
+    productVendor: Joi.objectId().label("Product Vendor"),
     ticketNumber: Joi.string()
       .pattern(/\d/)
       .max(8)

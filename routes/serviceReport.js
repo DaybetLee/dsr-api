@@ -107,7 +107,7 @@ router.post("/", [authentication, managerBelow], async (req, res) => {
     contactPerson: req.body.contactPerson,
     contactPersonEmail: req.body.contactPersonEmail,
     telephone: req.body.telephone,
-    productVendor: req.body.productVendorId,
+    productVendor: req.body.productVendor,
     ticketNumber: req.body.ticketNumber,
     actionTaken: req.body.actionTaken,
     remark: req.body.remark,

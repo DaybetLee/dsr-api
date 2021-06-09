@@ -21,7 +21,7 @@ router.post("/", [authentication, managerBelow], async (req, res) => {
     contactPerson: req.body.contactPerson,
     contactPersonEmail: req.body.contactPersonEmail,
     telephone: req.body.telephone,
-    productVendor: req.body.productVendorId,
+    productVendor: req.body.productVendor,
     ticketNumber: req.body.ticketNumber,
     actionTaken: req.body.actionTaken,
     remark: req.body.remark,
@@ -138,7 +138,7 @@ router.patch("/:id", [authentication, validateID], async (req, res) => {
         contactPersonEmail:
           req.body.contactPersonEmail || pending.contactPersonEmail,
         telephone: req.body.telephone || pending.telephone,
-        productVendor: req.body.productVendorId || pending.productVendor,
+        productVendor: req.body.productVendor || pending.productVendor,
         ticketNumber: req.body.ticketNumber || pending.ticketNumber,
         actionTaken: req.body.actionTaken || pending.actionTaken,
         remark: req.body.remark || pending.remark,
